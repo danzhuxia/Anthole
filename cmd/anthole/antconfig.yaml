@@ -1,0 +1,15 @@
+common:
+  token: xiaolaji
+server:
+  host: 127.0.0.1
+  port: 12345
+client:
+  services:
+  - local_host: 127.0.0.1
+    local_port: 12
+    remote_port: 123
+    type: tcp
+  - local_host: 127.0.0.1
+    local_port: 22
+    remote_port: 223
+    type: tcp
