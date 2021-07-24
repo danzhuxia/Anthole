@@ -14,7 +14,7 @@ Run `anthole client -c [Configuration file Path]`
 
 ## Configuration file
 
-Create a yaml file locally, add the following configuration items, and modify the `host`/`port`/`local_host`/`local_port`/`remote_port` options to what you want in the configuration. 
+Create a `.yaml` file locally as a configuration file, add the following configuration items, and modify the `host` `port` `local_host` `local_port` and `remote_port` options to what you want in the configuration. 
 
 ```
 common:
