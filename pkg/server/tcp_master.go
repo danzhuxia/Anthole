@@ -31,7 +31,7 @@ func (t *TcpMaster) Run(port int) error {
 	for {
 		if conn, err := listen.Accept(); err != nil {
 			logrus.Errorf("accept error:%v", err)
-
+			return err
 		} else {
 			logrus.Info("客户端接入")
 			// 设置一个3秒的计时器，3秒后没通过权限验证则关闭连接
