@@ -36,5 +36,5 @@ client:
 
 ## Running
 
-<p><img src="https://github.com/danzhuxia/Anthole/blob/main/images/server.png" alt="cmd-markdown-logo" title="Server Running" /></p>
-<p><img src="https://github.com/danzhuxia/Anthole/blob/main/images/client.png" alt="cmd-markdown-logo" title="Client Running" /></p>
+<p><img src="https://github.com/danzhuxia/Anthole/blob/main/images/server.png" alt="server" title="Server Running" /></p>
+<p><img src="https://github.com/danzhuxia/Anthole/blob/main/images/client.png" alt="client" title="Client Running" /></p>
