@@ -1,7 +1,7 @@
 common:
   token: xiaolaji
 server:
-  host: 39.104.23.185
+  host: 139.10.33.85
   port: 15555
 client:
   services:
