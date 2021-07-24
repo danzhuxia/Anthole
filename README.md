@@ -7,10 +7,10 @@ First, you need a Golang compilation environment. Please find the relevant docum
 ## Usage
 
 ### Server
-Run anthole server -c Configuration file Path
+Run `anthole server -c [Configuration file Path]`
 
 ### Client
-Run anthole client -c Configuration file Path
+Run `anthole client -c [Configuration file Path]`
 
 ## Configuration file
 
