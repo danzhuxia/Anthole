@@ -4,7 +4,6 @@ import (
 	"Anthole/pkg/common"
 	"fmt"
 	"net"
-	"strconv"
 	"sync"
 
 	"github.com/sirupsen/logrus"
@@ -18,11 +17,13 @@ import (
 var RequestConnPool sync.Map
 
 func CreateWorker(index int, port int) error {
-	listen, err := net.Listen("tcp", strconv.Itoa(port))
+	listen, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
+		logrus.Errorf("[Run Server Worker Failed] %s", err.Error())
 		return err
 	}
 	defer listen.Close()
+	logrus.Info("Anthole Server Worker 启动成功！ Worker Listening...At ", port)
 	for {
 		if requestConn, err := listen.Accept(); err == nil {
 			go func(serviceId int, conn net.Conn) {

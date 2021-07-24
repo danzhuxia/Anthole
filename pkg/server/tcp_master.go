@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -21,12 +20,12 @@ type TcpMaster struct {
 }
 
 func (t *TcpMaster) Run(port int) error {
-	listen, err := net.Listen("tcp", strconv.Itoa(port))
+	listen, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
-		logrus.Errorf("error listen:%v", err)
+		logrus.Errorf("[Run Server Tcp Master Failed] %s", err.Error())
 		return err
 	}
-	logrus.Info("Anthole 启动成功！")
+	logrus.Info("Anthole Server Tcp Master 启动成功！Master Listening...At ", port)
 	defer listen.Close()
 
 	for {
@@ -73,8 +72,8 @@ func (t *TcpMaster) ClientDataHandle(conn net.Conn) {
 		}
 
 		if dataPackage.RequestId == common.VerifyKey {
-			config, _ := common.GetConfig("")
-			if string(dataPackage.GetData()) == config.Common.Token {
+			//config, _ := common.GetConfig("")
+			if string(dataPackage.GetData()) == common.AntConf.Common.Token {
 				logrus.Info("权限校验通过")
 				t.verify = true
 			} else {

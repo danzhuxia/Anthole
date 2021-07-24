@@ -1,0 +1,15 @@
+common:
+  token: xiaolaji
+server:
+  host: 39.104.23.185
+  port: 15555
+client:
+  services:
+  - local_host: 127.0.0.1
+    local_port: 3306
+    remote_port: 16666
+    type: tcp
+#  - local_host: 127.0.0.1
+#    local_port: 22
+#    remote_port: 223
+#    type: tcp

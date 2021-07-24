@@ -24,7 +24,7 @@ func (t *TcpWorker) Run(config *common.AntHoleConfig) error {
 	for {
 		conn, err := net.Dial("tcp", fmt.Sprintf("%s:%d", config.Server.Host, config.Server.Port))
 		if err != nil {
-			logrus.Printf("与服务端连接失败，10秒后重试,错误信息： %v", err)
+			logrus.Infof("与服务端连接失败，10秒后重试,错误信息： %v", err)
 
 			time.Sleep(10 * time.Second)
 			continue

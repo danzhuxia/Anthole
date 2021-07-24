@@ -29,22 +29,31 @@ var clientCmd = &cobra.Command{
 	Use:   "client",
 	Short: "Anthole Client Option",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("client called")
-
+		antAscii:=`
+  ___        _   _           _      
+ / _ \      | | | |         | |     
+/ /_\ \_ __ | |_| |__   ___ | | ___ 
+|  _  | '_ \| __| '_ \ / _ \| |/ _ \
+| | | | | | | |_| | | | (_) | |  __/
+\_| |_/_| |_|\__|_| |_|\___/|_|\___|
+`
+		fmt.Println(antAscii)
+		fmt.Println("Client Called")
+		fmt.Println("Use client config filePath: ", cfgFile)
 		antholeConf, err := common.GetConfig(cfgFile)
 		if err != nil {
-			fmt.Fprintln(os.Stderr, "config error:", err)
+			fmt.Fprintln(os.Stderr, "[init config failed]", err)
 			os.Exit(1)
 		}
 		err = client.AntClientStart(antholeConf)
 		if err != nil {
-			fmt.Fprintln(os.Stderr, "init client error:", err)
+			fmt.Fprintln(os.Stderr, "[init client failed]", err)
 			os.Exit(1)
 		}
 	},
 }
 
 func init() {
-	cfgFile = *clientCmd.Flags().StringP("config", "c", "", "config file (default is /.anthole.yaml)")
+	clientCmd.Flags().StringVarP(&cfgFile,"config", "c", "", "config file (default is /.anthole.yaml)")
 	rootCmd.AddCommand(clientCmd)
 }
