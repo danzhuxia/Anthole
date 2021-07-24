@@ -36,5 +36,8 @@ client:
 
 ## Running
 
+### Server
 <p><img src="https://github.com/danzhuxia/Anthole/blob/main/images/server.png" alt="server" title="Server Running" /></p>
+
+### Client
 <p><img src="https://github.com/danzhuxia/Anthole/blob/main/images/client.png" alt="client" title="Client Running" /></p>
